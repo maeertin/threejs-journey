@@ -1,0 +1,13 @@
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+#canvas {
+  position: fixed;
+  outline: 0;
+}
