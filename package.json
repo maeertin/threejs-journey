@@ -1,9 +1,9 @@
 {
   "version": "0.0.0",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {},
   "devDependencies": {},
-  "resolutions": {},
   "workspaces": [
     "packages/*"
   ]
