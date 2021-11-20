@@ -11,10 +11,41 @@ const sizes = {
   height: window.innerHeight,
 }
 
+// Textures
+const loadingManager = new THREE.LoadingManager()
+const textureLoader = new THREE.TextureLoader(loadingManager)
+const alphaTexture = textureLoader.load('/textures/door/alpha.jpg')
+const ambientTexture = textureLoader.load('/textures/door/ambient.jpg')
+// const colorTexture = textureLoader.load('/textures/door/color.jpg')
+// const colorTexture = textureLoader.load('/textures/checkerboard-8x8.png')
+// const colorTexture = textureLoader.load('/textures/checkerboard-1024x1024.png')
+const colorTexture = textureLoader.load('/textures/minecraft.png')
+const heightTexture = textureLoader.load('/textures/door/height.jpg')
+const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
+const normalTexture = textureLoader.load('/textures/door/normal.jpg')
+const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
+
+loadingManager.onProgress = (...args) => {
+  console.log(...args)
+}
+
+// colorTexture.repeat.x = 2
+// colorTexture.repeat.y = 3
+// colorTexture.wrapS = THREE.MirroredRepeatWrapping
+// colorTexture.wrapT = THREE.MirroredRepeatWrapping
+
+// colorTexture.rotation = Math.PI * 0.25
+// colorTexture.center.x = 0.5
+// colorTexture.center.y = 0.5
+
+colorTexture.generateMipmap = false
+colorTexture.minFilter = THREE.NearestFilter
+colorTexture.magFilter = THREE.NearestFilter
+
 // Object
 const mesh = new THREE.Mesh(
   new THREE.BoxGeometry(1, 1, 1),
-  new THREE.MeshBasicMaterial({ color: 0xff0000 }),
+  new THREE.MeshBasicMaterial({ map: colorTexture }),
 )
 scene.add(mesh)
 
