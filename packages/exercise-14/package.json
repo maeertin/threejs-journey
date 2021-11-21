@@ -1,0 +1,21 @@
+{
+  "name": "@maeertin/exercise-14",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Martin Barri",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maeertin/threejs-journey.git",
+    "directory": "packages/exercise-14"
+  },
+  "scripts": {
+    "build": "webpack --config ../../webpack.prod.js",
+    "dev": "webpack serve --config ../../webpack.dev.js"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.7",
+    "gsap": "^3.5.1",
+    "three": "^0.134.0"
+  }
+}
