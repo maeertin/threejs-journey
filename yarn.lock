@@ -2913,6 +2913,11 @@ latest-version@^5.0.0:
   dependencies:
     package-json "^6.3.0"
 
+lil-gui@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/lil-gui/-/lil-gui-0.11.0.tgz#bfc0850cc9162b83302e7543ab4fb013c8769f64"
+  integrity sha512-TkId0NddawLwXxXiV6a+q2CUP4g+mARYEFARmNvicEr0kQqIKiIbNVZI4ifLSqw3GAhcRy+rvCJHXjoyYsYbAw==
+
 loader-runner@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-4.2.0.tgz#d7022380d66d14c5fb1d496b89864ebcfd478384"
