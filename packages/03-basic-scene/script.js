@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 // Scene
 const scene = new THREE.Scene()
 

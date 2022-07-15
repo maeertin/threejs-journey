@@ -15,16 +15,16 @@ const sizes = {
 }
 
 // Assets
-const textureLoader = new THREE.TextureLoader(loadingManager)
-const alphaTexture = textureLoader.load('/textures/door/alpha.jpg')
-const ambientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclusion.jpg')
-const colorTexture = textureLoader.load('/textures/door/color.jpg')
-const heightTexture = textureLoader.load('/textures/door/height.jpg')
-const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
-const normalTexture = textureLoader.load('/textures/door/normal.jpg')
-const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
-const gradientTexture = textureLoader.load('/textures/gradients/3.jpg')
-const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
+// const textureLoader = new THREE.TextureLoader(loadingManager)
+// const alphaTexture = textureLoader.load('/textures/door/alpha.jpg')
+// const ambientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclusion.jpg')
+// const colorTexture = textureLoader.load('/textures/door/color.jpg')
+// const heightTexture = textureLoader.load('/textures/door/height.jpg')
+// const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
+// const normalTexture = textureLoader.load('/textures/door/normal.jpg')
+// const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
+// const gradientTexture = textureLoader.load('/textures/gradients/3.jpg')
+// const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
 
 const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
 const environmentMapTexture = cubeTextureLoader.load([
@@ -37,6 +37,7 @@ const environmentMapTexture = cubeTextureLoader.load([
 ])
 
 loadingManager.onProgress = (...args) => {
+  // eslint-disable-next-line no-console
   console.log(...args)
 }
 

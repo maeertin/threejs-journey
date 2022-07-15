@@ -48,11 +48,11 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 
 // Clock
-const clock = new THREE.Clock()
+// const clock = new THREE.Clock()
 
 // Animations
 function tick() {
-  const elapsedTime = clock.getElapsedTime()
+  // const elapsedTime = clock.getElapsedTime()
 
   // Update objects
   // mesh.rotation.y = elapsedTime

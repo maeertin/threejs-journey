@@ -63,21 +63,19 @@ window.addEventListener('dblclick', () => {
     } else if (canvas.webkitRequestFullscreen) {
       canvas.webkitRequestFullscreen()
     }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen()
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen()
-    }
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen()
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen()
   }
 })
 
 // Clock
-const clock = new THREE.Clock()
+// const clock = new THREE.Clock()
 
 // Animations
 function tick() {
-  const elapsedTime = clock.getElapsedTime()
+  // const elapsedTime = clock.getElapsedTime()
 
   // Update objects
   // mesh.rotation.y = elapsedTime

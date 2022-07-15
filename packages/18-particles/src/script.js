@@ -1,13 +1,13 @@
 import './style.css'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'lil-gui'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+// import * as dat from 'lil-gui'
 
 /**
  * Base
  */
 // Debug
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -26,7 +26,7 @@ const particleTexture = textureLoader.load('/textures/particles/13.png')
  */
 // Geometry
 // const particlesGeometry = new THREE.SpehereGeometry()
-const particleCount = 20000
+const particleCount = 20_000
 const particlesGeometry = new THREE.BufferGeometry()
 const particleColors = new Float32Array(particleCount * 3)
 const particlePositions = new Float32Array(particleCount * 3)
@@ -70,20 +70,6 @@ const sizes = {
   height: window.innerHeight,
 }
 
-window.addEventListener('resize', () => {
-  // Update sizes
-  sizes.width = window.innerWidth
-  sizes.height = window.innerHeight
-
-  // Update camera
-  camera.aspect = sizes.width / sizes.height
-  camera.updateProjectionMatrix()
-
-  // Update renderer
-  renderer.setSize(sizes.width, sizes.height)
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
-
 /**
  * Camera
  */
@@ -100,10 +86,27 @@ controls.enableDamping = true
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-  canvas: canvas,
+  canvas,
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+/**
+ * Resize
+ */
+window.addEventListener('resize', () => {
+  // Update sizes
+  sizes.width = window.innerWidth
+  sizes.height = window.innerHeight
+
+  // Update camera
+  camera.aspect = sizes.width / sizes.height
+  camera.updateProjectionMatrix()
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
 
 /**
  * Animate

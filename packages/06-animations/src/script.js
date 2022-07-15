@@ -30,14 +30,14 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 
 // Clock
-const clock = new THREE.Clock()
+// const clock = new THREE.Clock()
 
 gsap.to(mesh.position, { duration: 1, delay: 1, x: 2 })
 
 // Animations
 function tick() {
   // Clock
-  const elapsedTime = clock.getElapsedTime()
+  // const elapsedTime = clock.getElapsedTime()
 
   // Update objects
   // mesh.rotation.y = elapsedTime * Math.PI * 2

@@ -6,7 +6,6 @@ import * as dat from 'dat.gui'
 
 // Base
 const canvas = document.getElementById('canvas')
-const clock = new THREE.Clock()
 const scene = new THREE.Scene()
 const gui = new dat.GUI({ closed: true, width: 400 })
 const sizes = {
@@ -16,6 +15,7 @@ const sizes = {
 const parameters = {
   color: 0xff0000,
   spin: () => {
+    // eslint-disable-next-line no-use-before-define
     gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + 10 })
   },
 }
@@ -68,8 +68,10 @@ window.addEventListener('resize', () => {
 })
 
 // Animations
+// const clock = new THREE.Clock()
+
 function tick() {
-  const elapsedTime = clock.getElapsedTime()
+  // const elapsedTime = clock.getElapsedTime()
 
   // Update controls
   controls.update()

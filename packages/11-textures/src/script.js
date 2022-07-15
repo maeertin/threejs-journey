@@ -4,7 +4,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 // Base
 const canvas = document.getElementById('canvas')
-const clock = new THREE.Clock()
 const scene = new THREE.Scene()
 const sizes = {
   width: window.innerWidth,
@@ -14,18 +13,19 @@ const sizes = {
 // Textures
 const loadingManager = new THREE.LoadingManager()
 const textureLoader = new THREE.TextureLoader(loadingManager)
-const alphaTexture = textureLoader.load('/textures/door/alpha.jpg')
-const ambientTexture = textureLoader.load('/textures/door/ambient.jpg')
+// const alphaTexture = textureLoader.load('/textures/door/alpha.jpg')
+// const ambientTexture = textureLoader.load('/textures/door/ambient.jpg')
 // const colorTexture = textureLoader.load('/textures/door/color.jpg')
 // const colorTexture = textureLoader.load('/textures/checkerboard-8x8.png')
 // const colorTexture = textureLoader.load('/textures/checkerboard-1024x1024.png')
 const colorTexture = textureLoader.load('/textures/minecraft.png')
-const heightTexture = textureLoader.load('/textures/door/height.jpg')
-const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
-const normalTexture = textureLoader.load('/textures/door/normal.jpg')
-const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
+// const heightTexture = textureLoader.load('/textures/door/height.jpg')
+// const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
+// const normalTexture = textureLoader.load('/textures/door/normal.jpg')
+// const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
 
 loadingManager.onProgress = (...args) => {
+  // eslint-disable-next-line no-console
   console.log(...args)
 }
 
@@ -81,8 +81,10 @@ window.addEventListener('resize', () => {
 })
 
 // Animations
+// const clock = new THREE.Clock()
+
 function tick() {
-  const elapsedTime = clock.getElapsedTime()
+  // const elapsedTime = clock.getElapsedTime()
 
   // Update controls
   controls.update()
