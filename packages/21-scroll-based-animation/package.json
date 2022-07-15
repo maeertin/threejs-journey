@@ -1,5 +1,5 @@
 {
-  "name": "@maeertin/20-raycaster",
+  "name": "@maeertin/21-scroll-based-animation",
   "version": "0.0.0",
   "private": false,
   "author": "Martin Barri",
@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/maeertin/threejs-journey.git",
-    "directory": "packages/19-galaxy-generator"
+    "directory": "packages/21-scroll-based-animation"
   },
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
@@ -34,6 +34,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "gsap": "^3.10.4",
     "lil-gui": "^0.16.1",
     "three": "^0.142.0"
   }
