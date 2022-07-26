@@ -9,7 +9,7 @@ uniform float uPerlinMultiplier;
 
 varying vec2 vUv;
 
-float random (vec2 st) {
+float random(vec2 st) {
   return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
 }
 
@@ -277,14 +277,19 @@ void main() {
   // Pattern 50
   // float strength = step(0.9, sin(cnoise(vUv * 10.0) * 20.0));
 
-  vec2 rotatingUv = rotate(vUv, uTime * 0.2, vec2(0.5));
-  rotatingUv.x *= uTime * 0.1;
-  rotatingUv.y /= uTime * 0.1;
+  // vec2 rotatingUv = rotate(vUv, uTime * 0.2, vec2(0.5));
+  // rotatingUv.x *= uTime * 0.1;
+  // rotatingUv.y /= uTime * 0.1;
 
   // float angle = atan(rotatingUv.x - 0.5, rotatingUv.y - 0.5);
-  float perlinNoise = cnoise(rotatingUv *  uPerlinMultiplier);
-  float test = max(cos(uTime), sin(uTime)) + 2.0;
-  float strength = step(uStep, sin(perlinNoise * uSinFrequency * test));
+  // float perlinNoise = cnoise(rotatingUv *  uPerlinMultiplier);
+  // float test = max(cos(uTime), sin(uTime)) + 2.0;
+  // float strength = step(uStep, sin(perlinNoise * uSinFrequency * test));
+
+  float perlinX = vUv.x * sin(uTime * 0.6) * 10.0;
+  float perlinY = vUv.y * cos(uTime * 0.3) * 20.0;
+  float perlin = cnoise(vec2(perlinX, perlinY));
+  float strength = step(0.4, perlin);
 
   // Clamp the strength value
   strength = clamp(strength, 0.0, 1.0);
